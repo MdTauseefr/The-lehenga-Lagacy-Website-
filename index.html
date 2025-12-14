@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lehenga Lagacy — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="page-home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">The Lehenga Lagacy</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="cart.html">Cart <span id="cart-count">0</span></a>
+      </nav>
+      <button class="hamburger" aria-label="toggle menu" onclick="toggleNav()">☰</button>
+    </div>
+    <div id="mobile-nav" class="mobile-nav hidden">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html">Cart <span id="cart-count-mobile">0</span></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Elegant. Timeless. Crafted for you.</h1>
+          <p>Explore handcrafted lehengas for weddings, festivities and special moments.</p>
+          <a class="btn" href="products.html">Shop Lehengas</a>
+        </div>
+        <div class="hero-image">
+          <img src="lehenga blue 45r.png" alt="Lehenga hero">
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Lehengas -->
+    <section class="container section">
+      <h2>Featured Lehengas</h2>
+      <div id="featured-grid" class="product-grid"></div>
+    </section>
+
+    <!-- Categories -->
+    <section class="container section categories">
+      <h2>Categories</h2>
+      <div class="category-list" id="categories-list"></div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="container section">
+      <h2>New Arrivals</h2>
+      <div id="new-arrivals" class="product-grid"></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container section testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonials-grid">
+        <blockquote>
+          "Absolutely loved the quality and detailing. Made my day special!" — Aisha
+        </blockquote>
+        <blockquote>
+          "Fast delivery and the fit was perfect. Will order again." — Priya
+        </blockquote>
+        <blockquote>
+          "Stunning colors and fabric — great value." — Meera
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>The Lehenga Lagacy</h3>
+        <p>Crafted lehengas for your special moments.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: hello@lehengalagacy.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <p>Instagram | Facebook | Whatsapp</p>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year"></span> The Lehenga Lagacy — All rights reserved
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // page-specific initialization
+    document.getElementById('year').textContent = new Date().getFullYear();
+    initCartCount();
+    // render small selections for home
+    renderFeaturedProducts('featured-grid', 4);
+    renderFeaturedProducts('new-arrivals', 4, true); // newest
+    renderCategories('categories-list');
+  </script>
+</body>
+</html>

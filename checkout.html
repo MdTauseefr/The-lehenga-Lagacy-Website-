@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lehenga Lagacy — Checkout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="page-checkout">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">The Lehenga Lagacy</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="cart.html">Cart <span id="cart-count">0</span></a>
+      </nav>
+      <button class="hamburger" aria-label="toggle menu" onclick="toggleNav()">☰</button>
+    </div>
+    <div id="mobile-nav" class="mobile-nav hidden">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html">Cart <span id="cart-count-mobile">0</span></a>
+    </div>
+  </header>
+
+  <main class="container section checkout">
+    <h2>Checkout</h2>
+    <div class="checkout-grid">
+      <form id="address-form" class="address-form">
+        <h3>Shipping Address</h3>
+        <label>
+          Full name
+          <input type="text" id="fullname" required>
+        </label>
+        <label>
+          Mobile number
+          <input type="tel" id="phone" required>
+        </label>
+        <label>
+          Address line
+          <input type="text" id="address" required>
+        </label>
+        <label>
+          City
+          <input type="text" id="city" required>
+        </label>
+        <label>
+          Pincode
+          <input type="text" id="pincode" required>
+        </label>
+      </form>
+
+      <div class="order-summary" id="order-summary">
+        <!-- order summary injected -->
+      </div>
+    </div>
+
+    <div class="payment-section">
+      <h3>Payment Options</h3>
+      <div class="payment-buttons">
+        <button class="btn" onclick="placeOrder('COD')">Cash on Delivery (COD)</button>
+        <button class="btn primary" onclick="placeOrder('ONLINE')">Pay Online (Dummy)</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>The Lehenga Lagacy</h3>
+        <p>Crafted lehengas for your special moments.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: hello@lehengalagacy.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <p>Instagram | Facebook | Whatsapp</p>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year"></span> The Lehenga Lagacy — All rights reserved
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    initCartCount();
+    renderOrderSummary();
+  </script>
+</body>
+</html>
